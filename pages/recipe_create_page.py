@@ -49,6 +49,7 @@ class RecipeCreatePage(BasePage):
         self.fill_description(recipe["description"])
         self.upload_image(recipe["image"])
         self.click(RecipeLocators.SUBMIT)
+        self.wait_for_url_contains("/recipes/")
 
     def is_submit_button_disabled(self):
         return self.is_disabled(RecipeLocators.SUBMIT)
